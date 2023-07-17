@@ -1,12 +1,13 @@
-small = 1
-big = 1
-helper = 0
-result = 0
-while big < 4000000:
-    helper = big
-    big = big + small
-    small = helper
-    if big % 2 == 0:
-        result += big
-    print(small)
-print(result)
+def fib_even_smaller_than(limit):
+    small, fib, result = 0, 1, 0
+    while fib < limit:
+        helper = fib
+        fib = small + helper
+        small = helper
+        result += fib if fib % 2 == 0 else 0
+    return result
+
+print(fib_even_smaller_than(4000000))
+
+
+
